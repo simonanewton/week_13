@@ -1,0 +1,27 @@
+{
+  "name": "node-express-handlebars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "mysql -h localhost -u root -p < ./db/schema.sql && mysql -h localhost -u root -p < ./db/seeds.sql",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonanewton/week_13.git"
+  },
+  "author": "Simon Newton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonanewton/week_13/issues"
+  },
+  "homepage": "https://github.com/simonanewton/week_13#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "inquirer": "^7.1.0",
+    "mysql": "^2.18.1"
+  }
+}
