@@ -1,17 +1,4 @@
 var mysql = require("mysql");
-var inquirer = require("inquirer");
-
-async function getPassword() {
-	const answer = await inquirer.prompt([
-		{
-			type: "password",
-			name: "password",
-			message: "What is your MySQL root password?"
-		}
-	]);
-
-	return answer.password;
-}
 
 var connection = mysql.createConnection({
 	host: "localhost",
@@ -21,7 +8,7 @@ var connection = mysql.createConnection({
 	database: "burgers_db"
 });
 
-connection.connect(function (err) {
+connection.connect((err) => {
 	if (err) {
 		console.error("error connecting: " + err.stack);
 		return;
