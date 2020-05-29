@@ -7,17 +7,17 @@ const orm = {
         return new Promise((resolve) => {
             connection.query(query, (err, res) => {
                 if (err) throw err;
-                resolve(res);
+                resolve(res.map(burger => burger.name));
             });
         });
     },
 
-    insertOne: (burger) => {
+    insertOne: (name) => {
         const query = "INSERT INTO burgers SET ?";
         const values = [
             {
-                burger_name: burger.name,
-                devoured: burger.devoured
+                burger_name: name,
+                devoured: false
             }
         ];
 
@@ -29,14 +29,14 @@ const orm = {
         });
     },
 
-    updateOne: (burger) => {
+    updateOne: (name, devoured) => {
         const query = "UPDATE burgers SET ? WHERE ?";
         const values = [
             {
-                devoured: burger.devoured
+                devoured: devoured
             },
             {
-                burger_name: burger.name
+                burger_name: name
             }
         ];
 
