@@ -1,12 +1,12 @@
 <header class="p-4 bg-primary text-white text-center d-flex justify-content-center">
     <h1 class="m-0">Eat-Da-Burger!</h1>
-    <i class="fas fa-hamburger fa-3x px-2"></i>
+    <i class="fas fa-hamburger fa-3x px-3"></i>
 </header>
 
 <main class="container p-0 my-4 text-white d-flex">
     <div class="col p-4 mx-2 bg-primary rounded">
         <div class="d-flex align-items-center">
-            <h2>Uneaten Burgers</h2>
+            <h2>Waiting List</h2>
             <i class="fas fa-utensils fa-2x px-3"></i>
         </div>
         <hr class="border-white">
@@ -14,7 +14,7 @@
         <ul class="list-group text-primary py-3">
             {{#each burgers}}
                 {{#unless devoured}}
-                    {{> burgers/burger-block devoured=true}}
+                    {{> burgers/burger-block devoured=false}}
                 {{/unless}}
             {{/each}}
         </ul>
@@ -28,9 +28,8 @@
         <hr class="border-white">
 
         <form class="align-content-center">
-            <label for="add-burger" class="my-2 m-0">Burger Name:</label>
-            <input type="text" name="burger-name" id="burger-name" class="my-2 border-0 rounded w-100">
-            <button type="submit" class="btn btn-outline-light my-3">Submit</button>
+            <input type="text" name="burger-name" id="burger-name" class="p-2 my-3 border-0 rounded w-100">
+            <button type="submit" class="btn btn-outline-light my-2">Submit</button>
         </form>
     </div>
 
@@ -45,7 +44,7 @@
         <ul class="list-group text-primary py-3">
             {{#each burgers}}
                 {{#if devoured}}
-                    {{> burgers/burger-block devoured=false}}
+                    {{> burgers/burger-block devoured=true}}
                 {{/if}}
             {{/each}}
         </ul>

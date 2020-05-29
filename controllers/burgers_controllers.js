@@ -3,11 +3,8 @@ const burger = require("../models/burger");
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-    const burgers = {
-        burgers: await burger.all()
-    };
-
-    res.render("index", burgers);
+    const burgers = await burger.all();
+    res.render("index", {burgers: burgers});
 });
 
 router.post("/api/burger", (req, res) => {
