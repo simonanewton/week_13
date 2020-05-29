@@ -2,8 +2,12 @@ const express = require("express");
 const burger = require("../models/burger");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.render("index");
+router.get("/", async (req, res) => {
+    const burgers = {
+        burgers: await burger.all()
+    };
+
+    res.render("index", burgers);
 });
 
 router.post("/api/burger", (req, res) => {

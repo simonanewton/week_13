@@ -1,0 +1,6 @@
+<li class="list-group-item py-2 d-flex justify-content-between align-items-center">
+    <p class="m-0">{{burger_name}}</p>
+    {{#if devoured}}
+    <button type="button" class="btn btn-outline-primary text-nowrap devour" data-id={{id}}>Devour it!</button>
+    {{/if}}
+</li>

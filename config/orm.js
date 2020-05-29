@@ -7,7 +7,7 @@ const orm = {
         return new Promise((resolve) => {
             connection.query(query, (err, res) => {
                 if (err) throw err;
-                resolve(res.map(burger => burger.name));
+                resolve(res);
             });
         });
     },
