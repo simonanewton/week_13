@@ -46,6 +46,22 @@ const orm = {
                 resolve(res);
             });
         });
+    },
+
+    deleteOne: (id) => {
+        const query = "DELETE FROM burgers WHERE ?";
+        values = [
+            {
+                id: id
+            }
+        ];
+
+        return new Promise((resolve) => {
+            connection.query(query, values, (err, res) => {
+                if (err) throw err;
+                resolve(res);
+            });
+        });
     }
 };
 

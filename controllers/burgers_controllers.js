@@ -19,4 +19,10 @@ router.put("/api/burgers/:id", async (req, res) => {
     res.status(200).end();
 });
 
+router.delete("/api/burgers/:id", async (req, res) => {
+    const id = req.params.id;
+    await burger.delete(id);
+    res.status(200).end();
+});
+
 module.exports = router;

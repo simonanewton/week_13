@@ -11,6 +11,10 @@ const burger = {
 
     update: (id) => {
         return orm.updateOne(id, true);
+    },
+
+    delete: (id) => {
+        return orm.deleteOne(id)
     }
 };
 
