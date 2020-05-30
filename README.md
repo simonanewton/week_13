@@ -2,7 +2,7 @@
 
 ## Description
 
-???
+This application presents users with a webpage that allows them to input a name of a burger, devour the burger, then put it in the trash. Upon submitting the burger name, the burger is placed on a Waiting List and stored in a MySQL database. When the user clicks the 'Devour it!' button, the burger is moved from the Waiting List to the Eaten Burgers section after having been modified within the database. Finally, when the user clicks the 'Trash' button, the burger is removed from the Eaten Burgers section and removed from the database.
 
 ## Table of Contents
 
@@ -34,7 +34,6 @@ npm start
 
 * https://www.npmjs.com/package/express
 * https://www.npmjs.com/package/express-handlebars
-* https://www.npmjs.com/package/inquirer
 * https://www.npmjs.com/package/mysql
 
 ## License
