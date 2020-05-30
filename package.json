@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "mysql -h localhost -u root -p < ./db/schema.sql && mysql -h localhost -u root -p < ./db/seeds.sql",
+    "seed": "mysql -h localhost -u root -p < ./db/schema.sql",
     "start": "node server.js"
   },
   "repository": {

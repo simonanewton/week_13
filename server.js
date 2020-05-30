@@ -17,4 +17,5 @@ app.use(routes);
 
 app.listen(PORT, () => {
     console.log("Server listening on: http://localhost:" + PORT);
+    console.log("Application deployed at: https://eatdaburgerhomework.herokuapp.com/");
 });

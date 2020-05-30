@@ -11,7 +11,7 @@ else {
 		port: 3306,
 		user: "root",
 		password: "french1",
-		database: "burgers_db"
+		database: "mq8pybelltz0e8tk"
 	});
 }
 
