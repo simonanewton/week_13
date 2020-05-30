@@ -4,14 +4,16 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     const burgers = await burger.all();
-    res.render("index", {burgers: burgers});
+    res.render("index", { burgers: burgers });
 });
 
-router.post("/api/burger", (req, res) => {
-    
+router.post("/api/burgers", async (req, res) => {
+    const burger_name = req.body.name;
+    const result = await burger.insert(burger_name);
+    res.json({ id: result.insertId });
 });
 
-router.put("/api/burger/:id", (req, res) => {
+router.put("/api/burgers/:id", (req, res) => {
     
 });
 
