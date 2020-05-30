@@ -6,11 +6,11 @@ const burger = {
     },
 
     insert: (name) => {
-        return orm.insertOne(name);
+        return orm.insertOne(name, false);
     },
 
-    update: (name, devoured) => {
-        return orm.updateOne(name, devoured);
+    update: (id) => {
+        return orm.updateOne(id, true);
     }
 };
 

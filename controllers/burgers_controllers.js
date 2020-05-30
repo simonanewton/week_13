@@ -13,8 +13,10 @@ router.post("/api/burgers", async (req, res) => {
     res.json({ id: result.insertId });
 });
 
-router.put("/api/burgers/:id", (req, res) => {
-    
+router.put("/api/burgers/:id", async (req, res) => {
+    const id = req.params.id;
+    await burger.update(id);
+    res.status(200).end();
 });
 
 module.exports = router;

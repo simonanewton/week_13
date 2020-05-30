@@ -12,12 +12,12 @@ const orm = {
         });
     },
 
-    insertOne: (name) => {
+    insertOne: (name, devoured) => {
         const query = "INSERT INTO burgers SET ?";
         const values = [
             {
                 burger_name: name,
-                devoured: false
+                devoured: devoured
             }
         ];
 
@@ -29,14 +29,14 @@ const orm = {
         });
     },
 
-    updateOne: (name, devoured) => {
+    updateOne: (id, devoured) => {
         const query = "UPDATE burgers SET ? WHERE ?";
         const values = [
             {
                 devoured: devoured
             },
             {
-                burger_name: name
+                id: id
             }
         ];
 
